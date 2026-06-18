@@ -10,7 +10,7 @@ public class LoginSteps {
 
     @Given("el usuario abre SauceDemo")
     public void abrirPagina() {
-        Hooks.setUp();
+        //Hooks.setUp();
         loginPage = new LoginPage(Hooks.page);
         loginPage.open();
     }
@@ -23,13 +23,13 @@ public class LoginSteps {
     @Then("visualiza la página de productos")
     public void validarLogin() {
         Assert.assertTrue(Hooks.page.url().contains("inventory"));
-        Hooks.tearDown();
+      // Hooks.tearDown();
     }
 
     @Then("visualiza mensaje de error")
     public void validarError() {
         boolean visible = Hooks.page.locator("[data-test='error']").isVisible();
         Assert.assertTrue(visible);
-        Hooks.tearDown();
+       // Hooks.tearDown();
     }
 }

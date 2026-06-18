@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import hooks.Hooks;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import pages.LoginPage;
@@ -12,7 +13,8 @@ public class CheckoutSteps {
 
     @Given("usuario con producto en carrito")
     public void usuarioConProducto() {
-        Hooks.setUp();
+
+        //Hooks.setUp();
 
         loginPage = new LoginPage(Hooks.page);
         loginPage.open();
@@ -37,7 +39,6 @@ public class CheckoutSteps {
     public void validarConfirmacion() {
         boolean visible = Hooks.page.locator(".complete-header").isVisible();
         Assert.assertTrue(visible);
-
-        Hooks.tearDown();
+       // Hooks.tearDown();
     }
 }

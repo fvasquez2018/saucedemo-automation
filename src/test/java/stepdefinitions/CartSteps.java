@@ -14,7 +14,7 @@ public class CartSteps {
 
     @Given("usuario logueado")
     public void usuarioLogueado() {
-        Hooks.setUp();
+        //Hooks.setUp();
 
         loginPage = new LoginPage(Hooks.page);
         loginPage.open();
@@ -34,6 +34,6 @@ public class CartSteps {
 
         Assert.assertTrue(cartPage.productVisible());
 
-        Hooks.tearDown();
+       // Hooks.tearDown();
     }
 }
